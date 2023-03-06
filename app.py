@@ -8,6 +8,8 @@ import streamlit as st
 import warnings
 warnings.filterwarnings('ignore')
 import base64
+from PIL import Image
+
 
 
 data = base64.b64decode("c2stT29hMnVZOUdFVFNTa0lHQ05QTWZUM0JsYmtGSndudkpsb0JLaWhITnNJdnZ4MU4w")
@@ -16,7 +18,11 @@ print(decoded_data)
 
 os.environ["OPENAI_API_KEY"] = decoded_data
 
-st.title("FAQ Bot for UAEU")
+image = Image.open('uaeu.png')
+
+st.image(image, caption='')
+
+st.title("FAQ AI-Bot for UAEU")
 
 user_input = st.text_input("Enter your Question here")
 
