@@ -10,7 +10,13 @@ warnings.filterwarnings('ignore')
 import base64
 from PIL import Image
 
-
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 data = base64.b64decode("c2stT29hMnVZOUdFVFNTa0lHQ05QTWZUM0JsYmtGSndudkpsb0JLaWhITnNJdnZ4MU4w")
 decoded_data = data.decode('utf-8')
